@@ -1,4 +1,4 @@
-<!-- tabbar部分 -->
+<!-- tabbar -->
 <view class="tabbar">
   <view class="item {{index==idx?'active':''}}" wx:for="{{tabBar}}" wx:for-index="idx" bindtap="goto" data-index='{{idx}}'>
     <i class="iconfont {{item.icon}} icon"></i>
@@ -9,36 +9,54 @@
 <!-- ------------------------ -->
 <!-- 页面部分 -->
 <view class="container">
-<!-- 首页部分 -->
-    <view class="index home" wx:if="{{index==0}}">
+  <!-- 首页部分 -->
+  <view class="index home" wx:if="{{index==0}}">
     <swiper indicator-dots="ture" indicator-active-color="blue" indicator-color="white" wx:if="!{{noImg}}" autoplay="ture" circular="ture" interval="2000">
-    <swiper-item wx:for="{{swiperImg}}" ><image src="{{item}}" alt=""></image></swiper-item>
+      <swiper-item wx:for="{{swiperImg}}">
+        <image src="{{item}}" alt=""></image>
+      </swiper-item>
     </swiper>
     <view class="indexcontainer">
-      <view class="indextitle"><image></image>小A欢迎你</view>
+      <view class="indextitle">
+        <image></image>小A欢迎你
+      </view>
       <view class="indextext"></view>
     </view>
-</view>
-<view class="index direction" wx:if="{{index==1}}"></view>
-<!-- 报名页面------ -->
-<view class="index sign" wx:if="{{index==2}}">
-<view class="signcontainer">
-  <view class="signtitle">报名</view>
-  <view class="signlogo"></view>
-  <scroll-view class="signinfo" scroll-y="ture" scroll-anchoring="ture">
-    <view class="signinput"><view>姓名</view><input placeholder="输入姓名"></input></view>
-    <view class="signinput"><view>学院</view><input placeholder="输入学院"></input></view>
-    <view class="signinput"><view>年级</view><select class="grade"nowId="{{grade.curfId}}"nameList="{{grade.grades}}" nowName="{{grade.curName}}" 
-	  placeholder="请选择年级"></select></view>
-    <view class="signinput"><view>专业班级</view><input placeholder="输入专业班级"></input></view>
-    <view class="signinput"><view>学号</view><input placeholder="输入学号"></input></view>
-    <view class="signinput"><view>方向</view><select class="grade"nowId="{{direction.curfId}}"nameList="{{direction.directions}}" nowName="{{direction.curName}}" 
-	  placeholder="请选择年级"></select></view>
-    <view class="signinput"><view>联系方式</view><input placeholder="输入联系方式"></input></view>
-    <view class="signinput"><view>个人简介</view><textarea></textarea></view>
-  </scroll-view>
-  <view class="signensure">确认报名</view>
-</view>
-</view>
-    <view class="index mine" wx:if="{{index==3}}">mine</view>
   </view>
+  <view class="index direction" wx:if="{{index==1}}"></view>
+  <!-- 报名页面------ -->
+  <view class="index sign" wx:if="{{index==2}}">
+    <view class="signcontainer">
+      <view class="signtitle">报名</view>
+      <view class="signlogo"></view>
+      <scroll-view class="signinfo" scroll-y="ture" scroll-anchoring="ture">
+        <view class="signinput">
+          <view>姓名</view><input placeholder="输入姓名"></input>
+        </view>
+        <view class="signinput">
+          <view>学院</view><input placeholder="输入学院"></input>
+        </view>
+        <view class="signinput">
+          <view>年级</view><select class="grade" nowId="{{grade.curfId}}" nameList="{{grade.grades}}" nowName="{{grade.curName}}" placeholder="请选择年级"></select>
+        </view>
+        <view class="signinput">
+          <view>专业班级</view><input placeholder="输入专业班级"></input>
+        </view>
+        <view class="signinput">
+          <view>学号</view><input placeholder="输入学号"></input>
+        </view>
+        <view class="signinput">
+          <view>方向</view><select class="grade" nowId="{{direction.curfId}}" nameList="{{direction.directions}}" nowName="{{direction.curName}}" placeholder="请选择年级"></select>
+        </view>
+        <view class="signinput">
+          <view>联系方式</view><input placeholder="输入联系方式"></input>
+        </view>
+        <view class="signinput">
+          <view>个人简介</view><textarea></textarea>
+        </view>
+      </scroll-view>
+      <view class="signensure">确认报名</view>
+    </view>
+  </view>
+  <view class="index mine" wx:if="{{index==3}}">mine</view>
+</view>
